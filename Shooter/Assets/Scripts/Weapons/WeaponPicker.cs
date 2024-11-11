@@ -30,11 +30,9 @@ public class WeaponPicker : MonoBehaviour
     {
         //disable current weapon
         Weapons[GameManager.Instance.CurrentWeapon].SetActive(false);
-        Debug.Log(GameManager.Instance.CurrentWeapon);
 
         //change to new current weapon and enable
         GameManager.Instance.CurrentWeapon = num;
         Weapons[GameManager.Instance.CurrentWeapon].SetActive(true);
-        Debug.Log(GameManager.Instance.CurrentWeapon);
     }
 }

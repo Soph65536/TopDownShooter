@@ -7,12 +7,12 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float deathTime;
 
-    private Rigidbody2D rb;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
 
         transform.parent = null;
         Destroy(gameObject, deathTime);

@@ -7,13 +7,13 @@ public class EnemyMovement : MonoBehaviour
     const float moveSpeed = 0.05f;
     const int damageAmount = 1;
 
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     private GameObject playerObject;
 
     // Start is called before the first frame update
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         playerObject = GameObject.FindFirstObjectByType<PlayerMovement>().gameObject;
     }
 
@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
         rb.MovePosition(Vector3.Lerp(transform.position, playerObject.transform.position, moveSpeed));
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionStay(Collision collision)
     {
         if(collision.gameObject == playerObject)
         {
