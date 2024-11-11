@@ -6,6 +6,7 @@ public class PlayerDamage : MonoBehaviour
 {
     const int maxHealth = 100;
     const float DamageCooldown = 1f;
+    const float DeathCooldown = 2f;
 
     public int Health;
     private bool TakingDamage;
@@ -20,12 +21,6 @@ public class PlayerDamage : MonoBehaviour
     {
         //make sure health doesn't go over max
         if(Health>maxHealth) { Health = maxHealth; }
-
-        if(Health <= 0)
-        {
-            transform.position = Vector3.zero;
-            Health = maxHealth;
-        }
     }
 
     public void TakeDamage(int damage)
@@ -37,8 +32,17 @@ public class PlayerDamage : MonoBehaviour
     {
         TakingDamage = true;
 
+        //take damage
         Health -= damage;
         yield return new WaitForSeconds(DamageCooldown);
+
+        //death check
+        if (Health <= 0)
+        {
+            transform.position = GameManager.Instance.SpawnPosition;
+            yield return new WaitForSeconds(DeathCooldown);
+            Health = maxHealth;
+        }
 
         TakingDamage = false;
     }
