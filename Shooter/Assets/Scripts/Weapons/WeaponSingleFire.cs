@@ -18,7 +18,7 @@ public class WeaponSingleFire : MonoBehaviour
     void FixedUpdate()
     {
         //shoot!!
-        if (!isFiring & Input.GetMouseButtonDown(0))
+        if (!isFiring & (Input.GetMouseButtonUp(0) || Input.GetMouseButtonDown(0)))
         {
             StartCoroutine("Shoot");
         }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WeaponConstAttack : MonoBehaviour
 {
-    //for flamethrower only
-    [SerializeField] private bool isFlameThrower;
+    //for fuel stuff only
+    [SerializeField] private bool isFuel;
     [SerializeField] private int maxFuel;
     private int fuel;
     void Start()
@@ -22,8 +22,8 @@ public class WeaponConstAttack : MonoBehaviour
         {
             AmmoObject.SetActive(true);
 
-            //flamethrower
-            if (isFlameThrower)
+            //fuel
+            if (isFuel)
             {
                 if (fuel <= 0) { AmmoObject.SetActive(false); }
                 else { fuel--; }
@@ -33,8 +33,8 @@ public class WeaponConstAttack : MonoBehaviour
         {
             AmmoObject.SetActive(false);
 
-            //flamethrower
-            if (isFlameThrower)
+            //fuel
+            if (isFuel)
             {
                 if (fuel < maxFuel) { fuel++; }
             }

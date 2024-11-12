@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    const float moveSpeed = 0.05f;
     const int damageAmount = 1;
 
-    private Rigidbody rb;
+    public float maxMoveSpeed = 0.05f;
+    public float moveSpeed = 0.05f;
+
+    private Rigidbody2D rb;
     private GameObject playerObject;
 
     // Start is called before the first frame update
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
         playerObject = GameObject.FindFirstObjectByType<PlayerMovement>().gameObject;
     }
 
@@ -23,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
         rb.MovePosition(Vector3.Lerp(transform.position, playerObject.transform.position, moveSpeed));
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.gameObject == playerObject)
         {

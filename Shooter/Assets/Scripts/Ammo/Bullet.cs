@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public int damage;
     [SerializeField] private float speed;
     [SerializeField] private float deathTime;
 
-    private Rigidbody rb;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
 
         transform.parent = null;
         Destroy(gameObject, deathTime);
@@ -21,6 +22,6 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.velocity = transform.forward * speed * Time.deltaTime;
+        rb.velocity = transform.up * speed * Time.deltaTime;
     }
 }

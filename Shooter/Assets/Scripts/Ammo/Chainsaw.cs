@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Chainsaw : MonoBehaviour
 {
-    public float damage;
+    public int damage;
 }

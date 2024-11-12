@@ -15,8 +15,8 @@ public class PlayerShooter : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //rotate to mousepos for aim
+        //rotate to face mousepos for aim
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.rotation = Quaternion.LookRotation(mousePos);
+        transform.rotation = Quaternion.LookRotation(transform.forward, mousePos - transform.position);
     }
 }

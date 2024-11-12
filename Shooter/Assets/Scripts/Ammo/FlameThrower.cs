@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class FlameThrower : MonoBehaviour
 {
-    public float damage;
+    public int damage;
 }
