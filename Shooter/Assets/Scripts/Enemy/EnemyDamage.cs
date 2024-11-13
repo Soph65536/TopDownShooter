@@ -6,11 +6,15 @@ public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] private int health;
     private bool TakingDamage;
+    private Animator animator;
+
     private bool ChainsawDamage; //check for if last damage was from a chainsaw
     private EnemyMovement enemyMovement; //to reference movespeed for frost gun
     private void Awake()
     {
         TakingDamage = false;
+        animator = GetComponent<Animator>();
+
         ChainsawDamage = false;
         enemyMovement = GetComponent<EnemyMovement>();
     }
@@ -79,6 +83,8 @@ public class EnemyDamage : MonoBehaviour
     {
         if (health <= 0)
         {
+            //animate death based on if chainsaw or not
+            animator.SetTrigger(ChainsawDamage ? "ChainsawDeath" : "NormalDeath");
             Destroy(gameObject, 1f);
         }
     }

@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal;
     private float vertical;
 
-    private Rigidbody2D rb;    
+    private Rigidbody2D rb;   
+    private Animator animator;
 
     // Start is called before the first frame update
     void Awake()
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
         vertical = 0f;
 
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,10 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+
+        animator.SetFloat("Horizontal", horizontal);
+        animator.SetFloat("Vertical", vertical);
+
         rb.velocity = new Vector3(horizontal * moveSpeed, vertical * moveSpeed, 0);
     }
 }
