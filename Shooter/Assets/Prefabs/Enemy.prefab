@@ -201,6 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  knockback: 2
+  OrbOfFireEnabled: 0
 --- !u!58 &1450310359309419555
 CircleCollider2D:
   m_ObjectHideFlags: 0

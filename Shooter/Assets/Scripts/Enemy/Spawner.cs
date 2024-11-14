@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    [SerializeField] private float SpawnPositionRange;
     [SerializeField] private float SpawnDelay;
     [SerializeField] private GameObject SpawnObject;
 
@@ -24,7 +25,12 @@ public class Spawner : MonoBehaviour
     {
         CurrentlySpawning = true;
 
-        Instantiate(SpawnObject, transform);
+        //create a random location within range to spawn
+        Vector3 randomPosition = transform.position + 
+            Vector3.right * Random.Range(-SpawnPositionRange, SpawnPositionRange) +
+            Vector3.up * Random.Range(-SpawnPositionRange, SpawnPositionRange);
+
+        Instantiate(SpawnObject, randomPosition, Quaternion.identity, transform);
         yield return new WaitForSeconds(SpawnDelay);
 
         CurrentlySpawning = false;
