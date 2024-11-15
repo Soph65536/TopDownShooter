@@ -9,6 +9,14 @@ public class EnemyDamage : MonoBehaviour
     private bool TakingDamage;
     private Animator animator;
 
+    //chainlightning
+    public bool ChainLightningEnabled;
+    private EnemyChainLightning enemyChainLightning;
+    //this weapon doesn't use a ontrigger to attack so easier to store its damage here than
+    //finding the gameobject every time
+    [SerializeField] private int ChainLightningDamage;
+    public int ChainLightningIterations;//num of previous chain lightnings before this one
+
     public bool OrbOfFireEnabled; //controls how many enemies can be attacked by orboffire at once
     private bool ChainsawDamage; //check for if last damage was from a chainsaw
     private EnemyMovement enemyMovement; //to reference movespeed for frost gun
@@ -17,9 +25,29 @@ public class EnemyDamage : MonoBehaviour
         TakingDamage = false;
         animator = GetComponent<Animator>();
 
+        ChainLightningEnabled = false;
+        enemyChainLightning = GetComponentInChildren<EnemyChainLightning>();
+        ChainLightningIterations = 0;
+
         OrbOfFireEnabled = false;
         ChainsawDamage = false;
         enemyMovement = GetComponent<EnemyMovement>();
+    }
+
+    private void FixedUpdate()
+    {
+        if(!TakingDamage && ChainLightningEnabled)
+        {
+            health -= (ChainLightningDamage - (int)((float)ChainLightningDamage * 0.15f * (float)ChainLightningIterations));
+            enemyChainLightning.StartCoroutine("SpreadLightning", ChainLightningIterations + 1);
+
+            StartCoroutine("TakeDamageDelay", 1f); //prevents receiving chain damage from another enemy
+            animator.SetTrigger("ChainLightning");
+
+            //if chaindamage then reset after the chain
+            ChainLightningEnabled = false;
+            ChainLightningIterations = 0;
+        } 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
