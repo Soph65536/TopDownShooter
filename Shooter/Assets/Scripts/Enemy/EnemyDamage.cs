@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
+    const float deathTime = 1f;
+
     [SerializeField] private int health;
     [SerializeField] private float knockback;
     private bool TakingDamage;
@@ -18,8 +20,9 @@ public class EnemyDamage : MonoBehaviour
     public int ChainLightningIterations;//num of previous chain lightnings before this one
 
     public bool OrbOfFireEnabled; //controls how many enemies can be attacked by orboffire at once
+    private bool isIceCube; //for cryo blast
     private bool ChainsawDamage; //check for if last damage was from a chainsaw
-    private EnemyMovement enemyMovement; //to reference movespeed for frost gun
+    private EnemyMovement enemyMovement; //to reference movespeed
     private void Awake()
     {
         TakingDamage = false;
@@ -38,7 +41,7 @@ public class EnemyDamage : MonoBehaviour
     {
         if(!TakingDamage && ChainLightningEnabled)
         {
-            health -= (ChainLightningDamage - (int)((float)ChainLightningDamage * 0.15f * (float)ChainLightningIterations));
+            TakeDamage(ChainLightningDamage - (int)((float)ChainLightningDamage * 0.15f * (float)ChainLightningIterations));
             enemyChainLightning.StartCoroutine("SpreadLightning", ChainLightningIterations + 1);
 
             StartCoroutine("TakeDamageDelay", 1f); //prevents receiving chain damage from another enemy
@@ -56,32 +59,37 @@ public class EnemyDamage : MonoBehaviour
         if(collision.GetComponent<Bullet>() != null)
         {
             //deplete health and destroy bullet on impact
-            health -= collision.GetComponent<Bullet>().damage;
+            TakeDamage(collision.GetComponent<Bullet>().damage);
             Destroy(collision.gameObject);
         }
         //missile
         else if (collision.GetComponent<MissileShockwave>() != null)
         {
-            health -= collision.GetComponent<MissileShockwave>().damage;
+            TakeDamage(collision.GetComponent<MissileShockwave>().damage);
             Destroy(collision.gameObject.GetComponentInParent<Missile>().gameObject, 1f);
         }
         //ricochet
         else if (collision.GetComponent<RicochetBullet>() != null)
         {
-            health -= collision.GetComponent<RicochetBullet>().damage;
+            TakeDamage(collision.GetComponent<RicochetBullet>().damage);
         }
         //orb of fire
         else if (collision.GetComponent<OrbOfFire>() != null && OrbOfFireEnabled)
         {
-            health -= collision.GetComponent<OrbOfFire>().damage;
+            TakeDamage(collision.GetComponent<OrbOfFire>().damage);
             StartCoroutine("TakeDamageDelay", 1f);
         }
         //punching glove
         else if (collision.GetComponent<PunchingGlove>() != null)
         {
-            health -= collision.GetComponent<PunchingGlove>().damage;
+            TakeDamage(collision.GetComponent<PunchingGlove>().damage);
             StartCoroutine("Stun", 1f);
             transform.position += collision.gameObject.transform.parent.transform.parent.transform.up * knockback;
+        }
+        //ice cube
+        else if (collision.GetComponent<CryoBlast>() != null)
+        {
+            if (!isIceCube) { StartCoroutine("BecomeIceCube"); }
         }
 
         CheckForDeath();
@@ -97,14 +105,14 @@ public class EnemyDamage : MonoBehaviour
             //flamethrower
             if (collision.GetComponent<FlameThrower>() != null)
             {
-                health -= collision.GetComponent<FlameThrower>().damage;
+                TakeDamage(collision.GetComponent<FlameThrower>().damage);
                 StartCoroutine("TakeDamageDelay", 0.5f);
             }
             //chainsaw
             else if (collision.GetComponent<Chainsaw>() != null)
             {
                 ChainsawDamage = true;
-                health -= collision.GetComponent<Chainsaw>().damage;
+                TakeDamage(collision.GetComponent<Chainsaw>().damage);
                 StartCoroutine("TakeDamageDelay", 0.2f);
             }
             //frost gun
@@ -128,6 +136,16 @@ public class EnemyDamage : MonoBehaviour
         }
     }
 
+    private void TakeDamage(int damage)
+    {
+        if (isIceCube)
+        {
+            animator.SetTrigger("IceCubeShatter");
+            Destroy(gameObject, deathTime);
+        }
+        health -= damage;
+    }
+
     private IEnumerator TakeDamageDelay(float delay)
     {
         TakingDamage = true;
@@ -139,7 +157,7 @@ public class EnemyDamage : MonoBehaviour
     {
         //depletes movespeed by 10 percent
         if (enemyMovement.moveSpeed > enemyMovement.maxMoveSpeed/2) { enemyMovement.moveSpeed -= enemyMovement.maxMoveSpeed/10; }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         //restores movespeed after 1 second
         enemyMovement.moveSpeed += enemyMovement.maxMoveSpeed/10;
     }
@@ -152,13 +170,30 @@ public class EnemyDamage : MonoBehaviour
         enemyMovement.moveSpeed = enemyMovement.maxMoveSpeed;
     }
 
+    private IEnumerator BecomeIceCube()
+    {
+        //set bool for other attack checks
+        isIceCube = true;
+
+        //set animator and temp disable movement
+        animator.SetBool("IceCube", true);
+        enemyMovement.moveSpeed = 0f;
+
+        yield return new WaitForSeconds(3f);
+
+        animator.SetBool("IceCube", false);
+        enemyMovement.moveSpeed = enemyMovement.maxMoveSpeed;
+
+        isIceCube = false;
+    }
+
     private void CheckForDeath()
     {
         if (health <= 0)
         {
             //animate death based on if chainsaw or not
             animator.SetTrigger(ChainsawDamage ? "ChainsawDeath" : "NormalDeath");
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, deathTime);
         }
     }
 }
