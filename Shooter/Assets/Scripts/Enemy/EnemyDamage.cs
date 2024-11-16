@@ -91,6 +91,11 @@ public class EnemyDamage : MonoBehaviour
         {
             if (!isIceCube) { StartCoroutine("BecomeIceCube"); }
         }
+        //ice cube
+        else if (collision.GetComponent<Grenade>() != null)
+        {
+            TakeDamage(collision.GetComponent<Grenade>().damage);
+        }
 
         CheckForDeath();
     }

@@ -20,7 +20,7 @@ public class WeaponPicker : MonoBehaviour
             if (Input.GetKey(KeyCodes[i]))
             {
                 //set so add 10 if pressing control and within limit
-                int Weapon = (Input.GetKey(KeyCode.LeftShift) && i<7) ? i+10 : i;
+                int Weapon = (Input.GetKey(KeyCode.LeftShift) && i<6) ? i+10 : i;
                 ChangeWeapon(Weapon);
             }
         }

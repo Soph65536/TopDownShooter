@@ -6,8 +6,8 @@ public class EnemyMovement : MonoBehaviour
 {
     const int damageAmount = 1;
 
-    public float maxMoveSpeed = 0.05f;
-    public float moveSpeed = 0.05f;
+    public float maxMoveSpeed = 0.07f;
+    public float moveSpeed = 0.07f;
 
     private Rigidbody2D rb;
     private GameObject playerObject;
