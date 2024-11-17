@@ -91,10 +91,16 @@ public class EnemyDamage : MonoBehaviour
         {
             if (!isIceCube) { StartCoroutine("BecomeIceCube"); }
         }
-        //ice cube
+        //grenade
         else if (collision.GetComponent<Grenade>() != null)
         {
             TakeDamage(collision.GetComponent<Grenade>().damage);
+        }
+        //mind blast emission
+        else if (collision.GetComponent<MindBlastEmission>() != null)
+        {
+            TakeDamage(collision.GetComponent<MindBlastEmission>().damage);
+            StartCoroutine("BecomeFriendly");
         }
 
         CheckForDeath();
@@ -141,7 +147,7 @@ public class EnemyDamage : MonoBehaviour
         }
     }
 
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         if (isIceCube)
         {
@@ -170,9 +176,20 @@ public class EnemyDamage : MonoBehaviour
     private IEnumerator Stun(float stunDelay)
     {
         //temporarily disables movement for stun
+        enemyMovement.stunned = true;
         enemyMovement.moveSpeed = 0.01f;
+
         yield return new WaitForSeconds(stunDelay);
+
         enemyMovement.moveSpeed = enemyMovement.maxMoveSpeed;
+        enemyMovement.stunned = false;
+    }
+
+    private IEnumerator BecomeFriendly()
+    {
+        enemyMovement.friendly = true;
+        yield return new WaitForSeconds(10f);
+        enemyMovement.friendly = false;
     }
 
     private IEnumerator BecomeIceCube()

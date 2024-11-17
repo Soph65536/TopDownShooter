@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     const float moveSpeed = 6.5f;
 
+    public bool cannotMove;
+
     private float horizontal;
     private float vertical;
 
@@ -15,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        cannotMove = false;
+
         horizontal = 0f;
         vertical = 0f;
 
@@ -31,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", horizontal);
         animator.SetFloat("Vertical", vertical);
 
-        rb.velocity = new Vector3(horizontal * moveSpeed, vertical * moveSpeed, 0);
+
+        rb.velocity = cannotMove ? Vector3.zero : new Vector3(horizontal * moveSpeed, vertical * moveSpeed, 0);
     }
 }
