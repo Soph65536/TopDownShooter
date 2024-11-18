@@ -5,17 +5,23 @@ using UnityEngine;
 public class PoisonDart : MonoBehaviour
 {
     [SerializeField] private float speed;
+    private Vector3 TargetPosition;
 
     // Start is called before the first frame update
     void Awake()
     {
-        transform.position -= transform.parent.position;
+        TargetPosition = transform.parent.position;
+        transform.position = transform.parent.transform.parent.position;
+
+        transform.parent = null;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, transform.parent.position, speed); //move towards the max distance
-        if(Vector3.Distance(transform.position, transform.parent.position) <= Vector3.kEpsilon) { Destroy(gameObject); } //destroy after moved max distance
+        transform.position = Vector3.Lerp(transform.position, TargetPosition, speed); //move towards the max distance
+        Debug.Log(transform.position);
+        Debug.Log(TargetPosition);
+        if(Vector3.Distance(transform.position, TargetPosition) <= 1f) { Destroy(gameObject); } //destroy after moved max distance
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5865850153934419985}
   - component: {fileID: 2802816823289643917}
   - component: {fileID: 1312363562662998884}
-  - component: {fileID: 4602664382578280152}
+  - component: {fileID: 8262760107663343137}
   - component: {fileID: 4967995110972418143}
   m_Layer: 0
   m_Name: RicochetBullet
@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fada1a4874e039a449a51f081f0bbe1a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c80b0058f1fba3e4d9fc3746371a0562, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -103,6 +103,7 @@ MonoBehaviour:
   speed: 500
   hasTimeDespawn: 0
   deathTime: 0
+  CurrentVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &1312363562662998884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
---- !u!58 &4602664382578280152
+--- !u!58 &8262760107663343137
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,9 +149,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.25
 --- !u!50 &4967995110972418143
 Rigidbody2D:
   serializedVersion: 4

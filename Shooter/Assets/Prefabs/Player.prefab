@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1925706485903214794}
+  - component: {fileID: 7661628353968980642}
   - component: {fileID: 5382403152493677346}
   m_Layer: 0
   m_Name: FrostGun
@@ -33,6 +34,20 @@ Transform:
   - {fileID: 6524778480620055076}
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7661628353968980642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530746150855577254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Hose Pipe
+  UIIcon: {fileID: 0}
 --- !u!114 &5382403152493677346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3661420046430682228}
+  - component: {fileID: 5117038220344238458}
   - component: {fileID: 2188882674605528548}
   - component: {fileID: 2670407972282398098}
   m_Layer: 0
@@ -165,6 +181,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5117038220344238458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513260695827095845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Blight
+  UIIcon: {fileID: 0}
 --- !u!114 &2188882674605528548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,6 +812,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3519876263576916487}
+  - component: {fileID: 4306267238900231468}
   - component: {fileID: 5915602384388678162}
   m_Layer: 0
   m_Name: GrapplingHook
@@ -805,6 +836,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4306267238900231468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287099925078379186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Wheelbarrow
+  UIIcon: {fileID: 0}
 --- !u!114 &5915602384388678162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,6 +873,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3894474068287056006}
+  - component: {fileID: 3920460164779299029}
   - component: {fileID: 3231956684538085476}
   m_Layer: 0
   m_Name: MachineGun
@@ -851,6 +897,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3920460164779299029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3569649809394792997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Leaf Blower
+  UIIcon: {fileID: 0}
 --- !u!114 &3231956684538085476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81511bd89421da241943bb87f952260f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoObject: {fileID: 8883828848635506544, guid: c44a193080009204980907d9ae125e57, type: 3}
+  AmmoObject: {fileID: 8883828848635506544, guid: efc48e0b4d170f047a03b8c72d15b716, type: 3}
   FireRate: 0.1
   InitialFireDelay: 0
   CanOverheat: 0
@@ -878,6 +938,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 105195851733836237}
+  - component: {fileID: 6224780874188546243}
   - component: {fileID: 8501125735451970400}
   m_Layer: 0
   m_Name: MissileLauncher
@@ -901,6 +962,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6224780874188546243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3741519922226755339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: 
+  UIIcon: {fileID: 0}
 --- !u!114 &8501125735451970400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -978,20 +1053,21 @@ MonoBehaviour:
   Weapons:
   - {fileID: 3569649809394792997}
   - {fileID: 9181587107743621875}
-  - {fileID: 5376447812785664820}
-  - {fileID: 3741519922226755339}
   - {fileID: 7004827520187724981}
-  - {fileID: 4951721813582902080}
+  - {fileID: 3741519922226755339}
   - {fileID: 7283917351098253490}
-  - {fileID: 530746150855577254}
   - {fileID: 5852374730363781346}
-  - {fileID: 7197736062755568160}
-  - {fileID: 1513260695827095845}
-  - {fileID: 6202521367288030639}
-  - {fileID: 6955589080362660524}
-  - {fileID: 3287099925078379186}
-  - {fileID: 8022287738810505570}
   - {fileID: 4794685009464148385}
+  - {fileID: 7197736062755568160}
+  - {fileID: 3287099925078379186}
+  - {fileID: 6955589080362660524}
+  - {fileID: 4951721813582902080}
+  - {fileID: 5376447812785664820}
+  - {fileID: 1513260695827095845}
+  - {fileID: 530746150855577254}
+  - {fileID: 8022287738810505570}
+  - {fileID: 6202521367288030639}
+  CurrentWeaponText: {fileID: 0}
 --- !u!1 &4794685009464148385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1077,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4835256908411581503}
+  - component: {fileID: 4337522231959193178}
   - component: {fileID: 7752266138590121724}
   m_Layer: 0
   m_Name: CrossbowWithPoisonDarts
@@ -1024,6 +1101,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4337522231959193178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794685009464148385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Slugs
+  UIIcon: {fileID: 0}
 --- !u!114 &7752266138590121724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,7 +1127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003126315df9ff84b919e6081ce00ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxYPos: 20
+  MaxYPos: 5
   YIncreaseSpeed: 0.5
   ReloadTime: 2
   ObjectToInstantiate: {fileID: 8883828848635506544, guid: b2b330a09dd7bed4f9632bdce1f5f82e, type: 3}
@@ -1049,6 +1140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3557873425060300746}
+  - component: {fileID: 1372244686606690975}
   - component: {fileID: 816587226473455410}
   m_Layer: 0
   m_Name: Chainsaw
@@ -1073,6 +1165,20 @@ Transform:
   - {fileID: 7212977288647022953}
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1372244686606690975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4951721813582902080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Lawn Mower
+  UIIcon: {fileID: 0}
 --- !u!114 &816587226473455410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,6 +1203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1293213109321513943}
+  - component: {fileID: 7194646535024171953}
   - component: {fileID: 6316117465143439827}
   m_Layer: 0
   m_Name: FlameThrower
@@ -1121,6 +1228,20 @@ Transform:
   - {fileID: 621315415308839122}
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7194646535024171953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376447812785664820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Weapon Of Mass Forest Destruction
+  UIIcon: {fileID: 0}
 --- !u!114 &6316117465143439827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1145,6 +1266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4009587984118103534}
+  - component: {fileID: 5992348650093720648}
   - component: {fileID: 7452662856923748361}
   m_Layer: 0
   m_Name: OrbOfFire
@@ -1168,6 +1290,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5992348650093720648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5852374730363781346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Source of Mass Forest Destruction
+  UIIcon: {fileID: 0}
 --- !u!114 &7452662856923748361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,6 +1496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6067867787825803600}
+  - component: {fileID: 186106563727497954}
   - component: {fileID: 5350910271439432822}
   - component: {fileID: 3580746359408728633}
   m_Layer: 0
@@ -1384,6 +1521,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &186106563727497954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6202521367288030639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Cold Weather
+  UIIcon: {fileID: 0}
 --- !u!114 &5350910271439432822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,6 +1591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8223327434640205177}
+  - component: {fileID: 6412860889498339732}
   - component: {fileID: 7230956234747721070}
   m_Layer: 0
   m_Name: Grenade
@@ -1463,6 +1615,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6412860889498339732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6955589080362660524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Dangerous Acorn
+  UIIcon: {fileID: 0}
 --- !u!114 &7230956234747721070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1488,6 +1654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6863711502416434423}
+  - component: {fileID: 3278394909047960833}
   - component: {fileID: 2398009383101599727}
   m_Layer: 0
   m_Name: Minigun
@@ -1511,6 +1678,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3278394909047960833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7004827520187724981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Hoe
+  UIIcon: {fileID: 0}
 --- !u!114 &2398009383101599727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1538,6 +1719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4179752052629481553}
+  - component: {fileID: 4978387387806348833}
   - component: {fileID: 8845314695152744397}
   m_Layer: 0
   m_Name: PunchingGlove
@@ -1561,6 +1743,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4978387387806348833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7197736062755568160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Gardening Gloves
+  UIIcon: {fileID: 0}
 --- !u!114 &8845314695152744397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1586,6 +1782,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3348532689770318125}
+  - component: {fileID: 8549597092926459434}
   - component: {fileID: 8500022588548229658}
   m_Layer: 0
   m_Name: RazorBlades
@@ -1609,6 +1806,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8549597092926459434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7283917351098253490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Shovel
+  UIIcon: {fileID: 0}
 --- !u!114 &8500022588548229658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1797,6 +2008,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2284636745526565485}
+  - component: {fileID: 6533450316902719322}
   - component: {fileID: 8816927948794065789}
   m_Layer: 0
   m_Name: MindBlastEmission
@@ -1821,6 +2033,20 @@ Transform:
   - {fileID: 7648123999940591}
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6533450316902719322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8022287738810505570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Watering Can
+  UIIcon: {fileID: 0}
 --- !u!114 &8816927948794065789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2011,6 +2237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6667965320885683498}
+  - component: {fileID: 2683566184785870344}
   - component: {fileID: 9088063100524899563}
   m_Layer: 0
   m_Name: Shotgun
@@ -2034,6 +2261,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2599836093183835451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2683566184785870344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9181587107743621875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Pitchfork
+  UIIcon: {fileID: 0}
 --- !u!114 &9088063100524899563
 MonoBehaviour:
   m_ObjectHideFlags: 0
