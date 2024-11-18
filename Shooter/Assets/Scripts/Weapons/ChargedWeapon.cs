@@ -5,24 +5,43 @@ using UnityEngine;
 public class ChargedWeapon : MonoBehaviour
 {
     [SerializeField] private float MaxYPos;
+    [SerializeField] private float YIncreaseSpeed;
+    [SerializeField] private float ReloadTime;
     [SerializeField] private GameObject ObjectToInstantiate;
+
+    private bool isReloading;
+    private void Start()
+    {
+        isReloading = false;
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!isReloading)
         {
-            Debug.Log("Down");
-            transform.localPosition = Vector3.zero;
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("Down");
+                transform.localPosition = Vector3.zero;
+            }
+            else if (Input.GetMouseButton(0) && transform.localPosition.y < MaxYPos)
+            {
+                transform.localPosition += Vector3.up * YIncreaseSpeed;
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                Debug.Log("Up");
+                Instantiate(ObjectToInstantiate, transform);
+                StartCoroutine("Reload");
+            }
         }
-        else if (Input.GetMouseButton(0) && transform.localPosition.y < MaxYPos)
-        {
-            transform.localPosition += Vector3.up/10;
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            Debug.Log("Up");
-            Instantiate(ObjectToInstantiate, transform);
-        }
+    }
+
+    private IEnumerator Reload()
+    {
+        isReloading = true;
+        yield return new WaitForSeconds(ReloadTime);
+        isReloading = false;
     }
 }

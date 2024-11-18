@@ -19,6 +19,10 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] private int ChainLightningDamage;
     public int ChainLightningIterations;//num of previous chain lightnings before this one
 
+    private int PoisonDebuff; //num of poison effect stack
+    private bool currentlyBeingPoisoned; //for poisoning coroutine delay
+    [SerializeField] private int PoisonDamage;
+
     public bool OrbOfFireEnabled; //controls how many enemies can be attacked by orboffire at once
     private bool isIceCube; //for cryo blast
     private bool ChainsawDamage; //check for if last damage was from a chainsaw
@@ -31,6 +35,9 @@ public class EnemyDamage : MonoBehaviour
         ChainLightningEnabled = false;
         enemyChainLightning = GetComponentInChildren<EnemyChainLightning>();
         ChainLightningIterations = 0;
+
+        PoisonDebuff = 0;
+        currentlyBeingPoisoned = false;
 
         OrbOfFireEnabled = false;
         ChainsawDamage = false;
@@ -51,6 +58,11 @@ public class EnemyDamage : MonoBehaviour
             ChainLightningEnabled = false;
             ChainLightningIterations = 0;
         } 
+
+        if(PoisonDebuff >= 5 && !currentlyBeingPoisoned)
+        {
+            StartCoroutine("GetPoisoned");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -101,6 +113,11 @@ public class EnemyDamage : MonoBehaviour
         {
             TakeDamage(collision.GetComponent<MindBlastEmission>().damage);
             StartCoroutine("BecomeFriendly");
+        }
+        //poison dart
+        else if (collision.GetComponent<PoisonDart>() != null)
+        {
+            StartCoroutine("HitPoisonDart");
         }
 
         CheckForDeath();
@@ -183,6 +200,21 @@ public class EnemyDamage : MonoBehaviour
 
         enemyMovement.moveSpeed = enemyMovement.maxMoveSpeed;
         enemyMovement.stunned = false;
+    }
+
+    private IEnumerator HitPoisonDart()
+    {
+        PoisonDebuff++;
+        yield return new WaitForSeconds(10f);
+        PoisonDebuff--;
+    }
+
+    private IEnumerator GetPoisoned()
+    {
+        currentlyBeingPoisoned = true;
+        TakeDamage(PoisonDamage);
+        yield return new WaitForSeconds(1f);
+        currentlyBeingPoisoned = false;
     }
 
     private IEnumerator BecomeFriendly()
