@@ -78,7 +78,6 @@ public class EnemyDamage : MonoBehaviour
         else if (collision.GetComponent<MissileShockwave>() != null)
         {
             TakeDamage(collision.GetComponent<MissileShockwave>().damage);
-            Destroy(collision.gameObject.GetComponentInParent<Missile>().gameObject, 1f);
         }
         //ricochet
         else if (collision.GetComponent<RicochetBullet>() != null)

@@ -21,6 +21,7 @@ public class Missile : MonoBehaviour
         {
             Shockwave.SetActive(true);
             projectileScript.CurrentVelocity = Vector3.zero;
+            Destroy(gameObject, 1f);
         }
     }
 }

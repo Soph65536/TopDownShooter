@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: 
+  weaponName: Hayfever
   UIIcon: {fileID: 0}
 --- !u!114 &8501125735451970400
 MonoBehaviour:
