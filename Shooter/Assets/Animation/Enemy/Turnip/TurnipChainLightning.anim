@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ChainsawAnim
+  m_Name: TurnipChainLightning
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: ac75cabed91d43a4cb3e3915556eec5f, type: 3}
+      value: {fileID: 1910369772, guid: aa645ee7d142cef4296f1f6f0255e161, type: 3}
     - time: 0.2
-      value: {fileID: 21300000, guid: 5e58e4e17d1e8cd4c986a536cf553484, type: 3}
+      value: {fileID: -1730206884, guid: aa645ee7d142cef4296f1f6f0255e161, type: 3}
     - time: 0.4
-      value: {fileID: 21300000, guid: 6a9c06573d0fd734fba37792b3a5bbbc, type: 3}
+      value: {fileID: 543486731, guid: aa645ee7d142cef4296f1f6f0255e161, type: 3}
     - time: 0.6
-      value: {fileID: 21300000, guid: ac75cabed91d43a4cb3e3915556eec5f, type: 3}
+      value: {fileID: 1910369772, guid: aa645ee7d142cef4296f1f6f0255e161, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: ac75cabed91d43a4cb3e3915556eec5f, type: 3}
-    - {fileID: 21300000, guid: 5e58e4e17d1e8cd4c986a536cf553484, type: 3}
-    - {fileID: 21300000, guid: 6a9c06573d0fd734fba37792b3a5bbbc, type: 3}
-    - {fileID: 21300000, guid: ac75cabed91d43a4cb3e3915556eec5f, type: 3}
+    - {fileID: 1910369772, guid: aa645ee7d142cef4296f1f6f0255e161, type: 3}
+    - {fileID: -1730206884, guid: aa645ee7d142cef4296f1f6f0255e161, type: 3}
+    - {fileID: 543486731, guid: aa645ee7d142cef4296f1f6f0255e161, type: 3}
+    - {fileID: 1910369772, guid: aa645ee7d142cef4296f1f6f0255e161, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

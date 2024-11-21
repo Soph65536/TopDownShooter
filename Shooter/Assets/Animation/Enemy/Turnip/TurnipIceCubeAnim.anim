@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ChainsawAnim
+  m_Name: TurnipIceCubeAnim
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: ac75cabed91d43a4cb3e3915556eec5f, type: 3}
-    - time: 0.2
-      value: {fileID: 21300000, guid: 5e58e4e17d1e8cd4c986a536cf553484, type: 3}
-    - time: 0.4
-      value: {fileID: 21300000, guid: 6a9c06573d0fd734fba37792b3a5bbbc, type: 3}
-    - time: 0.6
-      value: {fileID: 21300000, guid: ac75cabed91d43a4cb3e3915556eec5f, type: 3}
+      value: {fileID: 21300000, guid: 03a77e956a72e584e91ff2b1796a51fa, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,16 +44,13 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: ac75cabed91d43a4cb3e3915556eec5f, type: 3}
-    - {fileID: 21300000, guid: 5e58e4e17d1e8cd4c986a536cf553484, type: 3}
-    - {fileID: 21300000, guid: 6a9c06573d0fd734fba37792b3a5bbbc, type: 3}
-    - {fileID: 21300000, guid: ac75cabed91d43a4cb3e3915556eec5f, type: 3}
+    - {fileID: 21300000, guid: 03a77e956a72e584e91ff2b1796a51fa, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6166667
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

@@ -573,7 +573,7 @@ Transform:
   m_GameObject: {fileID: 2112161006757729318}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.55, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -591,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ce6f04aba8a974b840661147ea9b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 8
+  damage: 7
 --- !u!61 &2669614201248598035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -628,14 +628,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.375, y: 1.125}
+    oldSize: {x: 0.75, y: 2}
     newSize: {x: 0.32, y: 0.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 1.2}
+  m_Size: {x: 0.8, y: 2}
   m_EdgeRadius: 0
 --- !u!212 &5742973822872514335
 SpriteRenderer:
@@ -1054,8 +1054,8 @@ MonoBehaviour:
   - {fileID: 3569649809394792997}
   - {fileID: 9181587107743621875}
   - {fileID: 7004827520187724981}
-  - {fileID: 3741519922226755339}
   - {fileID: 7283917351098253490}
+  - {fileID: 3741519922226755339}
   - {fileID: 5852374730363781346}
   - {fileID: 4794685009464148385}
   - {fileID: 7197736062755568160}
@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Weapon Of Mass Forest Destruction
+  weaponName: Blow Torch
   UIIcon: {fileID: 0}
 --- !u!114 &6316117465143439827
 MonoBehaviour:
@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71595f4743da9514c8a12063cec101da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Source of Mass Forest Destruction
+  weaponName: Lighter
   UIIcon: {fileID: 0}
 --- !u!114 &7452662856923748361
 MonoBehaviour:
@@ -1771,7 +1771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxYPos: 3
   YIncreaseSpeed: 0.1
-  ReloadTime: 0
+  ReloadTime: 0.5
   ObjectToInstantiate: {fileID: 7856758841465656874, guid: d3702f3b2feff6240a46d1f7fb815c7d, type: 3}
 --- !u!1 &7283917351098253490
 GameObject:

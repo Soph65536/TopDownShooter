@@ -20,12 +20,7 @@ public class ChargedWeapon : MonoBehaviour
     {
         if (!isReloading)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("Down");
-                transform.localPosition = Vector3.zero;
-            }
-            else if (Input.GetMouseButton(0) && transform.localPosition.y < MaxYPos)
+            if (Input.GetMouseButton(0) && transform.localPosition.y < MaxYPos)
             {
                 transform.localPosition += Vector3.up * YIncreaseSpeed;
             }
@@ -42,6 +37,7 @@ public class ChargedWeapon : MonoBehaviour
     {
         isReloading = true;
         yield return new WaitForSeconds(ReloadTime);
+        transform.localPosition = Vector3.zero;
         isReloading = false;
     }
 }

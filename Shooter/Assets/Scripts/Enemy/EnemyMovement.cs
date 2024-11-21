@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    const int damageAmount = 1;
+    [SerializeField] private int damageAmount;
 
     public float maxMoveSpeed = 0.07f;
     public float moveSpeed = 0.07f;
