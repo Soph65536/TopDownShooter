@@ -38,4 +38,12 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = cannotMove ? Vector3.zero : new Vector3(horizontal * moveSpeed, vertical * moveSpeed, 0);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Checkpoint"))
+        {
+            GameManager.Instance.SpawnPosition = transform.position;
+        }
+    }
 }

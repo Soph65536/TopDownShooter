@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
 
     //variables
 
+    //ui
+    public bool inGameMenu;
+
     //player
     public Vector3 SpawnPosition;
     public int CurrentWeapon;
@@ -27,6 +30,8 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
+        inGameMenu = false;
+
         SpawnPosition = Vector3.zero;
         CurrentWeapon = 0;
     }
@@ -36,5 +41,7 @@ public class GameManager : MonoBehaviour
         //checks to make sure current weapon doesnt exceed limits
         if(CurrentWeapon > 16) { CurrentWeapon = 16; }
         if (CurrentWeapon < 0) {  CurrentWeapon = 0; }
+
+        Time.timeScale = inGameMenu ? 0 : 1;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    const float deathTime = 1f;
+    const float deathTime = 0.6f;
 
     [SerializeField] private int health;
     [SerializeField] private float knockback;

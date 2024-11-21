@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
             Vector3.right * Random.Range(-SpawnPositionRangeX, SpawnPositionRangeX) +
             Vector3.up * Random.Range(-SpawnPositionRangeY, SpawnPositionRangeY);
 
-        Instantiate(SpawnObject, randomPosition, Quaternion.identity, transform);
+        Instantiate(SpawnObject, randomPosition, Quaternion.Euler(0, 0, Random.Range(0, 360)), transform); ;
         yield return new WaitForSeconds(SpawnDelay);
 
         CurrentlySpawning = false;
