@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class WeaponPicker : MonoBehaviour
 {
+    [SerializeField] private AudioClip changeWeaponSound;
     [SerializeField] private GameObject[] Weapons;
     [SerializeField] private TextMeshProUGUI CurrentWeaponText; 
 
@@ -31,15 +32,21 @@ public class WeaponPicker : MonoBehaviour
 
     private void ChangeWeapon(int num)
     {
-        //disable current weapon
-        Weapons[GameManager.Instance.CurrentWeapon].SetActive(false);
-        Weapons[GameManager.Instance.CurrentWeapon].GetComponent<WeaponName>().UIIcon.GetComponent<Outline>().enabled = false;
+        //if weapon isnt already the one selected
+        if(num != GameManager.Instance.CurrentWeapon)
+        {
+            SoundManager.Instance.PlaySound(true, changeWeaponSound);
 
-        //change to new current weapon and enable
-        GameManager.Instance.CurrentWeapon = num;
-        Weapons[GameManager.Instance.CurrentWeapon].SetActive(true);
-        //change UI
-        CurrentWeaponText.text = Weapons[GameManager.Instance.CurrentWeapon].GetComponent<WeaponName>().weaponName;
-        Weapons[GameManager.Instance.CurrentWeapon].GetComponent<WeaponName>().UIIcon.GetComponent<Outline>().enabled = true;
+            //disable current weapon
+            Weapons[GameManager.Instance.CurrentWeapon].SetActive(false);
+            Weapons[GameManager.Instance.CurrentWeapon].GetComponent<WeaponName>().UIIcon.GetComponent<Outline>().enabled = false;
+
+            //change to new current weapon and enable
+            GameManager.Instance.CurrentWeapon = num;
+            Weapons[GameManager.Instance.CurrentWeapon].SetActive(true);
+            //change UI
+            CurrentWeaponText.text = Weapons[GameManager.Instance.CurrentWeapon].GetComponent<WeaponName>().weaponName;
+            Weapons[GameManager.Instance.CurrentWeapon].GetComponent<WeaponName>().UIIcon.GetComponent<Outline>().enabled = true;
+        }
     }
 }

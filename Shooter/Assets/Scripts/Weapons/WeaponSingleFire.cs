@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeaponSingleFire : MonoBehaviour
 {
+    [SerializeField] private AudioClip shootSound;
     [SerializeField] private GameObject AmmoObject;
     [SerializeField] private float FireRate;
 
@@ -28,6 +29,7 @@ public class WeaponSingleFire : MonoBehaviour
     {
         isFiring = true;
 
+        SoundManager.Instance.PlaySound(true, shootSound);
         Instantiate(AmmoObject, transform);
         yield return new WaitForSeconds(FireRate);
 

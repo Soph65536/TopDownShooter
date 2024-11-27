@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 8192304120586232709}
   - component: {fileID: 5865850153934419985}
   - component: {fileID: 70090920347749804}
-  - component: {fileID: 4948600367561677663}
+  - component: {fileID: 1275509355785836789}
   - component: {fileID: 1450310359309419555}
   - component: {fileID: -8164279445420342270}
   - component: {fileID: 4315661638569536906}
@@ -237,7 +237,7 @@ MonoBehaviour:
   moveSpeed: 0.05
   stunned: 0
   friendly: 0
---- !u!114 &4948600367561677663
+--- !u!114 &1275509355785836789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,8 +249,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000f4964ff51c1244a29f6077325604c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 120
   knockback: 2
+  takeDamage: {fileID: 8300000, guid: 1179408aaa2e0d04b8cefe73cd75a386, type: 3}
+  poisonDamage: {fileID: 8300000, guid: 149129655a2303f489ad82a6bce341c7, type: 3}
+  iceCube: {fileID: 8300000, guid: 48873dd28e40fe54aaa443109bb920ec, type: 3}
+  iceCubeDamage: {fileID: 8300000, guid: e243da1acd41cf64aa3b6dd01fbeea4f, type: 3}
+  stunEffect: {fileID: 8300000, guid: 105f7e76167c5e644ba2b921d6f57eb1, type: 3}
+  slowEffect: {fileID: 8300000, guid: 0038e0bf5ed535d43a8cf9ca36942859, type: 3}
+  friendlyEffect: {fileID: 8300000, guid: e0f4fed160d823641be59499d768f052, type: 3}
+  normalDeath: {fileID: 8300000, guid: 5726a8dfae84fae418538373251ddd74, type: 3}
+  chainsawDeath: {fileID: 8300000, guid: 4784c125cf764164482622680214c0c3, type: 3}
   ChainLightningEnabled: 0
   ChainLightningDamage: 12
   ChainLightningIterations: 0

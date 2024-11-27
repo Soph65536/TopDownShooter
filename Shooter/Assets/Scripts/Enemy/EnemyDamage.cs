@@ -11,6 +11,17 @@ public class EnemyDamage : MonoBehaviour
     private bool TakingDamage;
     private Animator animator;
 
+    //sounds
+    [SerializeField] private AudioClip takeDamage;
+    [SerializeField] private AudioClip poisonDamage;
+    [SerializeField] private AudioClip iceCube;
+    [SerializeField] private AudioClip iceCubeDamage;
+    [SerializeField] private AudioClip stunEffect;
+    [SerializeField] private AudioClip slowEffect;
+    [SerializeField] private AudioClip friendlyEffect;
+    [SerializeField] private AudioClip normalDeath;
+    [SerializeField] private AudioClip chainsawDeath;
+
     //chainlightning
     public bool ChainLightningEnabled;
     private EnemyChainLightning enemyChainLightning;
@@ -148,9 +159,9 @@ public class EnemyDamage : MonoBehaviour
                 StartCoroutine("SlowEffect");
                 StartCoroutine("TakeDamageDelay", 0.5f); //this acts as a delay for the effect stack
             }
-        }
 
-        CheckForDeath();
+            CheckForDeath();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -167,8 +178,17 @@ public class EnemyDamage : MonoBehaviour
     {
         if (isIceCube)
         {
+            SoundManager.Instance.PlaySound(false, iceCubeDamage);
             animator.SetTrigger("IceCubeShatter");
             Destroy(gameObject, deathTime);
+        }
+        else if(currentlyBeingPoisoned)
+        {
+            SoundManager.Instance.PlaySound(false, poisonDamage);
+        }
+        else
+        {
+            SoundManager.Instance.PlaySound(false, takeDamage);
         }
         health -= damage;
     }
@@ -182,6 +202,7 @@ public class EnemyDamage : MonoBehaviour
 
     private IEnumerator SlowEffect()
     {
+        SoundManager.Instance.PlaySound(false, slowEffect);
         //depletes movespeed by 10 percent
         if (enemyMovement.moveSpeed > enemyMovement.maxMoveSpeed/2) { enemyMovement.moveSpeed -= enemyMovement.maxMoveSpeed/10; }
         yield return new WaitForSeconds(1.5f);
@@ -191,6 +212,7 @@ public class EnemyDamage : MonoBehaviour
 
     private IEnumerator Stun(float stunDelay)
     {
+        SoundManager.Instance.PlaySound(false, stunEffect);
         //temporarily disables movement for stun
         enemyMovement.stunned = true;
         enemyMovement.moveSpeed = 0.01f;
@@ -218,6 +240,7 @@ public class EnemyDamage : MonoBehaviour
 
     private IEnumerator BecomeFriendly()
     {
+        SoundManager.Instance.PlaySound(false, friendlyEffect);
         enemyMovement.friendly = true;
         yield return new WaitForSeconds(10f);
         enemyMovement.friendly = false;
@@ -225,6 +248,8 @@ public class EnemyDamage : MonoBehaviour
 
     private IEnumerator BecomeIceCube()
     {
+        SoundManager.Instance.PlaySound(false, iceCube);
+
         //set bool for other attack checks
         isIceCube = true;
 
@@ -246,6 +271,7 @@ public class EnemyDamage : MonoBehaviour
         {
             //animate death based on if chainsaw or not
             animator.SetTrigger(ChainsawDamage ? "ChainsawDeath" : "NormalDeath");
+            SoundManager.Instance.PlaySound(false, ChainsawDamage ? chainsawDeath : normalDeath);
             Destroy(gameObject, deathTime);
         }
     }

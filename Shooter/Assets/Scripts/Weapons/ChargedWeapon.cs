@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChargedWeapon : MonoBehaviour
 {
+    [SerializeField] private AudioClip shootSound;
     [SerializeField] private float MaxYPos;
     [SerializeField] private float YIncreaseSpeed;
     [SerializeField] private float ReloadTime;
@@ -26,7 +27,7 @@ public class ChargedWeapon : MonoBehaviour
             }
             else if (Input.GetMouseButtonUp(0))
             {
-                Debug.Log("Up");
+                SoundManager.Instance.PlaySound(true, shootSound);
                 Instantiate(ObjectToInstantiate, transform);
                 StartCoroutine("Reload");
             }

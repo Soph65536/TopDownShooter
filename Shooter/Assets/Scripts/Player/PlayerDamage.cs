@@ -12,6 +12,9 @@ public class PlayerDamage : MonoBehaviour
     public int Health;
     private bool TakingDamage;
 
+    [SerializeField] private AudioClip damageSound;
+    [SerializeField] private AudioClip deathSound;
+
     private Animator animator;
 
     private void Awake()
@@ -39,15 +42,21 @@ public class PlayerDamage : MonoBehaviour
 
         //take damage
         Health -= damage;
-        yield return new WaitForSeconds(DamageCooldown);
 
         //death check
         if (Health <= 0)
         {
+            SoundManager.Instance.PlaySound(true, deathSound);
             animator.SetTrigger("Death");
             yield return new WaitForSeconds(DeathCooldown);
             transform.position = GameManager.Instance.SpawnPosition;
             Health = maxHealth;
+        }
+        //otherwise damage delay
+        else
+        {
+            SoundManager.Instance.PlaySound(true, damageSound);
+            yield return new WaitForSeconds(DamageCooldown);
         }
 
         TakingDamage = false;
