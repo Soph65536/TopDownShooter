@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         inGameMenu = false;
 
         SpawnPosition = Vector3.zero;
-        CurrentWeapon = -1;
+        CurrentWeapon = 0;
     }
 
     private void Update()
